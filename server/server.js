@@ -13,7 +13,8 @@ const options = {
     url: `https://wordsapiv1.p.rapidapi.com`,
     headers: {
     'x-rapidapi-host': 'wordsapiv1.p.rapidapi.com',
-    'x-rapidapi-key': '47b41b8d27mshbe69129491e3e82p1feba9jsnc57a7f91450a'
+    'x-rapidapi-key': '47b41b8d27mshbe69129491e3e82p1feba9jsnc57a7f91450a',
+    "Access-Control-Allow-Origin" : "*" 
     }
 };
 
