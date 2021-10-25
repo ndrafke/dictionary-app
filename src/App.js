@@ -28,16 +28,18 @@ const handleSubmit = (e) => {
 console.log(results)
 
   return (
-    <Container id="dictionary">
-      <h1>Dictionary</h1>
+    <Container className="bg-light" id="dictionary">
+      <h1 style={{textAlign: "center"}}>Dictionary</h1>
+      <div className="m-2">
       <Search word={word} handleChange={handleChange} handleSubmit={handleSubmit} />
-      
+      </div>
+      <div className="m-2">
       {loading && <h1>Loading...</h1>}
       {error && <h1>Error... Refresh Page</h1>}
       {results.map(result => {
         return <Result key={result} result={result} />
       })}
-     
+     </div>
      
     </Container>
   )

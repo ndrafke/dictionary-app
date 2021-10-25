@@ -6,19 +6,19 @@ export default function Result({result}) {
     return (
     <Card>
         <Card.Body>
-        <div className="d-flex justify-content-between">
-        
+        <div className="d-flex flex-column justify-content-between">
+        <Card.Title>
+            <h2 >{result.word}</h2>
+        </Card.Title>
         {result.results.map((info, index) => {
             return (
-                <div key={index}>
-                <Card.Title>
-            <h1>{result.word}</h1>
-        </Card.Title>
+                <ul key={index}>
+               
                 <Card.Text >
-       <p>{info.definition}</p> 
-       <p>{info.partOfSpeech}</p>
+       <li>({info.partOfSpeech}) {info.definition}</li> 
+       
         </Card.Text>
-        </div>
+        </ul>
             )
 })}
                

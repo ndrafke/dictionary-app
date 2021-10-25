@@ -1,20 +1,21 @@
-import {Form, Button} from 'react-bootstrap';
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button'
 
 export default function Search({input, handleChange, handleSubmit}) {
     
        
     return (
-        <div className="container d-flex flex-column align-items-center justify-content-center">
+        
          <Form onSubmit={handleSubmit} >
-           <Form.Group>
-           <Form.Label>Word</Form.Label>
-           <Form.Control onChange={handleChange} value={input} name="word" type="text"/> 
-           </Form.Group>
-           <Button variant="primary" type="submit">
-            Submit
-          </Button>
+           <div className="d-flex flex-column align-items-center">
            
+           <Form.Control className="m-2" onChange={handleChange} value={input} name="word" type="text" placeholder="Enter A Word" /> 
+           
+           <Button variant="primary" type="submit">
+            Search
+          </Button>
+           </div>
           </Form>  
-        </div>
+        
     )
 }
