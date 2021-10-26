@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import useWordFetch from './useWordFetch';
 import {Container} from 'react-bootstrap';
+import Spinner from 'react-bootstrap/Spinner';
 import Search from './Search';
 import Result from './Result';
 
@@ -28,14 +29,17 @@ const handleSubmit = (e) => {
 console.log(results)
 
   return (
-    <Container className="bg-light" id="dictionary">
+    <Container className="bg-light mt-3 p-2">
       <h1 style={{textAlign: "center"}}>Dictionary</h1>
       <div className="m-2">
       <Search word={word} handleChange={handleChange} handleSubmit={handleSubmit} />
       </div>
       <div className="m-2">
-      {loading && <h1>Loading...</h1>}
-      {error && <h1>Error... Refresh Page</h1>}
+      {loading && 
+      <Spinner animation="border" role="status">
+      <span className="visually-hidden">Loading...</span>
+      </Spinner>}
+      {error && <h6>No results... Try a new search</h6>}
       {results.map(result => {
         return <Result key={result} result={result} />
       })}
