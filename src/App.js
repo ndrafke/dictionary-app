@@ -29,12 +29,12 @@ const handleSubmit = (e) => {
 console.log(results)
 
   return (
-    <Container className="bg-light mt-3 p-2">
-      <h1 style={{textAlign: "center"}}>Dictionary</h1>
+    <Container className="bg-light mt-3 p-2" style={{width: "95vw", border: "2px solid black", borderRadius: "3%"}}>
+      <h1 style={{textAlign: "center", fontFamily: "Georgia"}}>Dictionary</h1>
       <div className="m-2">
       <Search word={word} handleChange={handleChange} handleSubmit={handleSubmit} />
       </div>
-      <div className="m-2">
+      <div className="m-2 d-flex flex-column align-items-center">
       {loading && 
       <Spinner animation="border" role="status">
       <span className="visually-hidden">Loading...</span>

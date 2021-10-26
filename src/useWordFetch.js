@@ -14,7 +14,7 @@ const OPTIONS = {
     url: BASE_URL,
     headers: {
       'x-rapidapi-host': 'wordsapiv1.p.rapidapi.com',
-      'x-rapidapi-key': '47b41b8d27mshbe69129491e3e82p1feba9jsnc57a7f91450a'
+      'x-rapidapi-key': process.env.REACT_APP_API_KEY
     }
   };
 
