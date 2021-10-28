@@ -10,4 +10,4 @@ To run this application:
 
 [Deployed on Netlify!](https://neat-dictionary.netlify.app/)
 
-![Dictionary Screen Shot](https://i.imgur.com/5wabJVN.png?1)
+![Dictionary Screen Shot](https://i.imgur.com/Z5N1Mg9.png)
