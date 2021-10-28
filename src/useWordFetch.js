@@ -53,7 +53,7 @@ useEffect(() => {
     dispatch({type: ACTIONS.GET});
     axios.request(OPTIONS, {
         cancelToken: cancelToken1.token,
-        word: {word: word} 
+        word: {word} 
     }).then(res => {
         dispatch({type: ACTIONS.GET_DATA, payload: {results: [res.data]}})
         
