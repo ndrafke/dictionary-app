@@ -29,7 +29,7 @@ const handleSubmit = (e) => {
 console.log(results)
 
   return (
-    <Container className="bg-light mt-3 p-2" style={{width: "95vw", border: "2px solid black", borderRadius: "3%"}}>
+    <Container className="bg-light mt-3 p-2" style={{width: "95vw", border: "2px solid black"}}>
       <h1 style={{textAlign: "center", fontFamily: "Georgia"}}>Dictionary</h1>
       <div className="m-2">
       <Search word={word} handleChange={handleChange} handleSubmit={handleSubmit} />

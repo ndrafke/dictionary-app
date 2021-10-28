@@ -5,29 +5,35 @@ import {Card} from 'react-bootstrap';
 export default function Result({result}) {
 
     const definitionStyles = {
-        listStyle: "none",
-        fontFamily: "georgia"
+        listStyle: "none"
+        
     }
 
     const listStyles = {
-        listStyle: "none", 
-        fontFamily: "georgia",
+        listStyle: "square inside",
         fontSize: "1.1rem",
-        marginLeft: "3.8rem" 
+        marginLeft: "2.8rem"
     }
 
     const partOfSpeechStyles = {
         fontSize: "0.9rem", 
-        fontStyle: "italic"
+        fontStyle: "italic",
+        fontFamily: "georgia",
+        marginLeft: "2.8rem"
     }
     const subStyles = {
         fontSize: "0.9rem", 
-        fontFamily: "georgia",
+        fontFamily: "american typewriter", 
         fontStyle: "italic"
     }
     const exampleStyles = {
-        fontSize: "0.9rem", 
-        fontFamily: "georgia"
+        fontSize: "0.9rem",
+        fontFamily: "american typewriter" ,
+        fontStyle: "italic"
+        
+    }
+    const prefixStyles = {
+        fontStyle: "normal"
     }
     
 
@@ -44,13 +50,15 @@ export default function Result({result}) {
             return (
                 <ul key={index} id="result-list">
                
-        <Card.Text className="m-2 d-flex flex-column justify-content-center" style={{backgroundColor: "white", padding: "2rem", borderRadius: "1000px"}}>
+        <Card.Text className="m-2 d-flex flex-column justify-content-center" style={{backgroundColor: "white", padding: "1.5rem 2.5rem 1.5rem 2.5rem", borderRadius: "1000px", minWidth: "50vw"}}>
        <li style={definitionStyles}>
-           <span style={partOfSpeechStyles}>({info.partOfSpeech})</span>: {info.definition}</li>
-           {info.examples ? <li style={listStyles}><span style={exampleStyles}>i.e: "{info.examples.join(",  '' ")}"</span></li> :  ""}
+           <span style={partOfSpeechStyles}>({info.partOfSpeech}):</span></li>
+           <li style={definitionStyles}>{info.definition}</li>
+           {info.examples ? <li style={listStyles}><span style={exampleStyles}>
+            <span style={prefixStyles}>i.e:   </span>   "{info.examples.join('",   "')}"</span></li> :  ""}
            {info.synonyms ? <li style={listStyles}><span style={subStyles}>
-           Synonyms: {info.synonyms.join(",  ")}</span></li> : ""}
-           {info.similarTo ? <li style={listStyles}><span style={subStyles}>Similar to: {info.similarTo.join(",  ")}</span></li> : ""} 
+           <span style={prefixStyles}>Synonyms: </span>   {info.synonyms.join(",  ")}</span></li> : ""}
+           {info.similarTo ? <li style={listStyles}><span style={subStyles}><span style={prefixStyles}>Similar to:   </span>   {info.similarTo.join(",  ")}</span></li> : ""} 
         </Card.Text>
         </ul>
             )
