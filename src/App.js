@@ -6,12 +6,14 @@ import Search from './Search';
 import Result from './Result';
 
 
+
 function App() {
+//useState to hold state of word Search : 
 const [input, setInput] = useState("");  
 const [word, setWord] = useState("dictionary");
 
 
-
+//variables from useWordFetch hook imported as props:
 const {results, loading, error} = useWordFetch(word);
 
 const handleChange = (e) => {

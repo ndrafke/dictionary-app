@@ -1,22 +1,12 @@
 import {useReducer, useEffect} from 'react';
 import axios from 'axios';
 
+//constants for API actions:
 const ACTIONS = {
     GET: "GET",
     GET_DATA: "get-data",
     ERROR: "error"
 }
-
-const BASE_URL = `https://wordsapiv1.p.rapidapi.com/words/`
-
-const OPTIONS = {
-    method: 'GET',
-    url: BASE_URL,
-    headers: {
-      'x-rapidapi-host': 'wordsapiv1.p.rapidapi.com',
-      'x-rapidapi-key': process.env.REACT_APP_API_KEY
-    }
-  };
 
 function reducer(state, action) {
     switch(action.type){
@@ -35,8 +25,10 @@ function reducer(state, action) {
 }
 
 export default function useWordFetch(word){
+//useReducer for state management:    
 const [state, dispatch] = useReducer(reducer, {results: [], loading: true})
 
+//API endpoints and credentials:
 const BASE_URL = `https://wordsapiv1.p.rapidapi.com/words/${word}`
 
 const OPTIONS = {
@@ -44,10 +36,11 @@ const OPTIONS = {
     url: BASE_URL,
     headers: {
       'x-rapidapi-host': 'wordsapiv1.p.rapidapi.com',
-      'x-rapidapi-key': '47b41b8d27mshbe69129491e3e82p1feba9jsnc57a7f91450a'
+      'x-rapidapi-key': process.env.REACT_APP_API_KEY
     }
   };
 
+// WordsAPI called with useEffect when word variable changes in search:
 useEffect(() => {
     const cancelToken1 = axios.CancelToken.source();
     dispatch({type: ACTIONS.GET});

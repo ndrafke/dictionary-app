@@ -1,12 +1,13 @@
 import React from 'react'
 import {Card} from 'react-bootstrap';
 
+//Results from search displayed on bootstrap Card:
 
 export default function Result({result}) {
 
+    //Styles for displaying json data returned from API call:
     const definitionStyles = {
-        listStyle: "none"
-        
+        listStyle: "none"  
     }
 
     const listStyles = {
